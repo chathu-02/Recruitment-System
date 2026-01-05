@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Contact Us Page</title>
+    <link rel="stylesheet" href="./css/contactus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!--Header-->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blog</a>
+            <a href="project.html">Our projects</a>
+            <a href="./php/aboutUs.php">About Us</a>
+            <a href="contactus.html">Contact Us</a>
+
+            <button class="btnLogin-popup"><a href="./php/login.php">Login</a></button>
+        </nav>
+        <form action="" class="search-bar">
+            <input type="text" placeholder="Search....">
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+    <br>
+
+
+    <div class="contact">
+        <h1>Contact Us</h1>
+        <form  action="php/contactus.php" method="post">
+            <div class="form">
+                Name : <br>
+                <input type="text" id="name" name="Name" required><br><br> 
+              
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="Email" required>
+                <span id="emailError" style="color:red;"></span><br><br>
+                Message : <br>
+                <textarea id="message" cols=70 rows=10 name="Description" required></textarea><br><br>
+
+                <center>
+                    <input type="submit" value="submit" id="subBtn">
+                    
+                </center>
+            </div>
+            
+        </form>
+        <form method="POST" action="./php/search.php">
+            <label for="email">Enter Email:</label>
+            <input type="email" id="email" style="height: 30px;" name="email" required>
+            <button type="submit" id="subBtn">Search Contact</button>
+        </form>
+        
+        <div class="info">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>No 90,<br>Kandy Road,<br>Colombo.</p>
+
+            <i class="fas fa-phone"></i>
+            <p>+94 75 8963207</p>
+
+
+            <i class="fas fa-envelope"></i>
+            <p>softnexus@gmail.com</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!--footer-->
+    <footer>
+        <div class="containerf">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4><br>
+                    <ul>
+                        <li><a href="#" target="_blank">HOME</a></li>
+                        <li><a href="#" target="_blank">BLOGS</a></li>
+                        <li><a href="#" target="_blank">RATE</a></li>
+                        <li><a href="#" target="_blank">DISCOVER</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>CONTACT US</h4><br>
+                <ul>
+                    <li>
+                        <span class="fas fa-phone-alt"></span>
+                        <span>+94 75 8963207</span>
+                    </li>
+                    <li>
+                        <span class="fas fa-envelope"></span>
+                        <span><a href="#" target="_blank" class="email">softnexus@gmail.com</a></span>
+                    </li>
+                    <li>
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span>No 90,<br>Kandy Road,<br>Colombo.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Do You Need Any Support?</h4><br>
+                <ul>
+                    <li> <a href="helpandsupport.html"><button class="help-button">Help & Support</button></li></button></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="qrcode">
+                    <i class="fa fa-qrcode" aria-hidden="true"></i>
+                </div>
+                <a href="feedback.html"><button class="feedback-button">Feedback</button></a>
+                        <h4 class="follow-h4">Follow Us</h4>
+                        <div class="social">
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class="bx bxl-twitter"></i></a>
+                            <a href="#"><i class="bx bxl-instagram"></i></a>
+                            <a href="#"><i class="bx bxl-google-plus"></i></a>
+                        </div>
+            </div>
+        </div>
+        
+        </div>
+    </footer>
+    <script>
+        document.getElementById("email").addEventListener("input", function() {
+            var emailField = document.getElementById("email");
+            var emailError = document.getElementById("emailError");
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple regex for email validation
+        
+            if (!emailPattern.test(emailField.value)) {
+                emailError.textContent = "Please enter a valid email address.";
+            } else {
+                emailError.textContent = ""; // Clear the error message if valid
+            }
+        });
+        </script>
+</body>
+
+</html>
